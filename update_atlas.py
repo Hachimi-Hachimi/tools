@@ -65,7 +65,7 @@ def main():
 
     last_dot_pos = old_atlas_path.rfind(".")
     out_path = old_atlas_path[:last_dot_pos] + "_new.png"
-    im.save(out_path)
+    im.save(out_path, "PNG", compress_level=9)
 
 
 main()

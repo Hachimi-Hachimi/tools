@@ -23,7 +23,7 @@ def main():
             im_draw.rectangle(coords, "#ff00ff")
 
     out_path = bundle_path + "_matte.png"
-    im.save(out_path)
+    im.save(out_path, "PNG", compress_level=9)
 
 
 main()
