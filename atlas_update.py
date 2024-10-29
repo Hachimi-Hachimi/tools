@@ -1,13 +1,13 @@
 import UnityPy
 from UnityPy.classes import Sprite
 from PIL import Image, ImageDraw
-from common import *
+from unitypy_utils import *
 from pathlib import Path
+from sys import argv
 
 def main():
-    old_atlas_path = input("Enter atlas path: ").strip()
-    old_bundle_path = input("Enter old bundle path: ").strip()
-    new_bundle_path = input("Enter new bundle path: ").strip()
+    (old_atlas_path, old_bundle_path, new_bundle_path, *_) = argv[1:]
+    diff_mode = len(argv) > 4 and argv[4] == "diff"
 
     old_env = UnityPy.load(old_bundle_path)
     new_env = UnityPy.load(new_bundle_path)
@@ -49,8 +49,13 @@ def main():
                 source_im = old_atlas_im
             else:
                 print("[Warn] {} has changed its size, using new sprite instead".format(name))
-        
+
         if not source_im or not source_rect_coords:
+            # Ignore new sprites when updating diff
+            if diff_mode:
+                print("{}: skipped".format(name))
+                continue
+
             print("{}: new".format(name))
             source_im = new_texture_im
             source_rect_coords = new_rect_coords

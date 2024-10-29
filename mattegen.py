@@ -1,7 +1,7 @@
 import UnityPy
 from UnityPy.classes import Sprite
 from PIL import Image, ImageDraw
-from common import find_first_texture_2d, rect_to_coords
+from unitypy_utils import find_first_texture_2d, rect_to_coords
 
 def main():
     bundle_path = input("Enter bundle path: ").strip()

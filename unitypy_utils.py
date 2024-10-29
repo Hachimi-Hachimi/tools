@@ -21,3 +21,10 @@ def rect_to_coords(rect: Rectangle, max_y: int):
     x1 = rect.x + rect.width
     y1 = max_y - rect.y
     return (int(x0), int(y0), int(x1), int(y1))
+
+def find_texture_2d_by_name(env: UnityPy.Environment, name: str) -> Texture2D:
+    for obj in env.objects:
+        if obj.type.name == "Texture2D":
+            data = obj.read()
+            if data.name == name:
+                return data

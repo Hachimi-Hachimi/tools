@@ -2,18 +2,27 @@
 #    uv pip compile - -o requirements.txt
 brotli==1.1.0
     # via unitypy
+certifi==2024.8.30
+    # via requests
+charset-normalizer==3.3.2
+    # via requests
 etcpak==0.9.8
     # via unitypy
 fsspec==2024.3.1
     # via unitypy
+idna==3.10
+    # via requests
 lz4==4.3.3
     # via unitypy
 pillow==10.3.0
     # via unitypy
 pyfmodex==0.7.2
     # via unitypy
+requests==2.32.3
 tabulate==0.9.0
     # via unitypy
 texture2ddecoder==1.0.4
     # via unitypy
 unitypy==1.10.13
+urllib3==2.2.3
+    # via requests
