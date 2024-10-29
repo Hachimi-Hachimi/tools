@@ -10,7 +10,7 @@ Install dependencies in `requirements.txt` before running these tools.
 - `atlas_diff_janitor.py`: Try to clean up an atlas PNG diff with garbage pixels, which includes sprite areas with no opaque pixels and areas that are not within any sprite boundaries. Arguments: `(bundle_path, in_path, out_path)`
 - `atlas_janitor.py`: Clean up an atlas texture by cropping off areas that are not within any sprite boundaries. Arguments: `(bundle_path, in_path, out_path)`
 - `atlas_meta_gen.py`: Generate meta files for atlas replacements. Arguments: `(windows_meta, android_meta, atlas_dir)`
-- `atlas_update.py`: Update a (translated) atlas texture to match a newer atlas by creating a new atlas texture with the sprites remapped to their new location.
+- `atlas_update.py`: Update a (translated) atlas texture to match a newer atlas by creating a new atlas texture with the sprites remapped to their new location. Arguments: `(old_atlas_path, old_bundle_path, new_bundle_path, mode)`. Set `mode` to `diff` to update an atlas diff, otherwise leave `mode` empty.
 - `bundle_dl.py`: Download an asset bundle. Resulting file is saved at `{output_dir}/{bundle_name}_{bundle_hash}`. Arguments: `(output_dir, meta_path, bundle_name)`
 - `mattegen.py`: Generate a matte from an AtlasReference texture asset bundle.
 - `png_diff.py`: Generate a PNG diff based on two images. Arguments: `(old_path, new_path, out_path)`
