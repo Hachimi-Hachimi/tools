@@ -28,7 +28,7 @@ def main():
 
             meta_path = ld_assets_dir / (asset_name + ".json")
             if meta_path.is_file():
-                with open(meta_path) as f:
+                with open(meta_path, "r", encoding="utf-8") as f:
                     meta = json.load(f)
 
             if windows_hash:
