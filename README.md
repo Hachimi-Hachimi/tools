@@ -15,5 +15,6 @@ Install dependencies in `requirements.txt` before running these tools.
 - `mattegen.py`: Generate a matte from an AtlasReference texture asset bundle.
 - `png_diff.py`: Generate a PNG diff based on two images. Arguments: `(old_path, new_path, out_path)`
 - `uianimation_meta_update.py`: Update existing uianimation meta files. Arguments: `(windows_meta, android_meta, anim_dir)`
+- `calc_hname.py`: Calculate the hash name for a file from its checksum and name. This uses the calculation method that was used to produce the hash names in the meta DB. Arguments: `(file_path, name)`
 
 Other Python scripts are libraries and do not have any functionality on their own.

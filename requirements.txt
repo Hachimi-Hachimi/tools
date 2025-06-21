@@ -26,3 +26,4 @@ texture2ddecoder==1.0.4
 unitypy==1.10.13
 urllib3==2.2.3
     # via requests
+xxhash==3.5.0
